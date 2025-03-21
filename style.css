@@ -1,0 +1,65 @@
+body {
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+}
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+#circle {
+  background: black;
+  width: 10em;
+  height: 10em;
+  border-radius: 100%;
+  transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+}
+#circle p {
+  display: none;
+  font-size: 3em;
+}
+#startButton {
+  position: absolute;
+  background: red;
+  width: 60px;
+  height: 60px;
+  z-index: 99;
+  border-radius: 100%;
+  left: 47.6em;
+  top: 53em;
+  
+}
+
+#grayArea {
+  background-color: gray;
+  width: 20em;
+  height: 10em;
+  position: absolute;
+  width: 1em;
+  height: 60px;
+  top: 26em;
+  border-radius: 30px;
+  animation: transition 0.2s ease-in-out;
+  display: none;
+}
+@keyframes transition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    background-color: white;
+    width: 11em;
+  }
+}
+#grayArea p{
+  color: red;
+  z-index: 99;
+}
