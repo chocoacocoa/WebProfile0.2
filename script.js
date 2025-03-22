@@ -3,12 +3,9 @@ let circleCount = 0;
 let greetings = document.getElementById("greetings");
 let grayArea = document.getElementById("grayArea");
 let pea = document.getElementById("pea");
-let fullName = document.getElementById('FullName')
+let fullName = document.getElementById("FullName");
 let buttonContainer = document.getElementById("buttonContainer");
-let submit = document.getElementById('submit');
-
-
-
+let submit = document.getElementById("submit");
 
 circle.addEventListener("click", function () {
   // circle.style.width = "20em";
@@ -47,31 +44,36 @@ function start() {
 grayArea.addEventListener("click", function () {
   grayArea.style.boxShadow =
     "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset";
-    greetings.style.top = "1em"
-    greetings.style.position = "absolute";
-    greetings.innerText = "Who U?"
-    greetings.style.transition = "0.2s";
-    grayArea.style.position = "absolute";
-    grayArea.style.width = "24em";
-    grayArea.style.height = "20em"
-    grayArea.style.top = "15em"
-    grayArea.style.animation = "unset";
-    grayArea.style.transition = "0.2s";
-    pea.style.display = "none";
-    fullName.style.display = "block";
-    submit.style.display = "block";
+  greetings.style.top = "1em";
 
-    grayArea.style.display = "flex";
-    grayArea.style.justifyContent = "center";
-    grayArea.style.alignItems = "center";
-    grayArea.style.flexDirection = "column";
+  greetings.innerText = "Who U?";
+  greetings.style.transition = "0.2s";
 
+  grayArea.style.width = "24em";
+  grayArea.style.height = "20em";
+
+  grayArea.style.animation = "unset";
+  grayArea.style.transition = "0.2s";
+  pea.style.display = "none";
+  fullName.style.display = "block";
+  submit.style.display = "block";
+
+  grayArea.style.display = "flex";
+  grayArea.style.justifyContent = "center";
+  grayArea.style.alignItems = "center";
+  grayArea.style.flexDirection = "column";
 });
-function validateInput(){
-    let nameInput = fullName.value;
+function validateInput() {
+  let nameInput = fullName.value;
 
-    if(nameInput === "cholocutie"){
-        // alert(`greetings ${nameInput}`);
-        greetings.style.color = "red";
-    }
+  if (nameInput === "Cholo") {
+    // alert(`greetings ${nameInput}`);
+    grayArea.style.background = "red";
+    grayArea.style.borderRadius = '0';
+    hideForm()
+  }
+}
+function hideForm(){
+    fullName.style.display = 'none';
+    submit.style.display = 'none';
 }
