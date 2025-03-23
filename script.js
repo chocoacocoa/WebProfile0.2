@@ -84,6 +84,9 @@ function validateInput() {
       grayArea.style.borderRadius = '0';
       grayArea.style.transition = "1s"
       grayArea.style.rotate = '360deg'
+      grayArea.addEventListener('transitionend', function (){
+        window.location.href = "/p2/index.html"
+      });
     }, 100);
     circleCount = 3;
 
@@ -92,5 +95,9 @@ function validateInput() {
     let buttonContainer = document.getElementById('buttonContainer')
     buttonContainer.style.display = "none"
 
+  }else{
+    setTimeout(() =>{
+     greetings.innerText = "Your not CholoDev!"
+    }, 100);
   }
 }
