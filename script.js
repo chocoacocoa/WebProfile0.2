@@ -4,29 +4,34 @@ let greetings = document.getElementById("greetings");
 let grayArea = document.getElementById("grayArea");
 let pea = document.getElementById("pea");
 let fullName = document.getElementById("FullName");
-let buttonContainer = document.getElementById("buttonContainer");
 let submit = document.getElementById("submit");
 
 circle.addEventListener("click", function () {
   // circle.style.width = "20em";
   // circle.style.height = "20em";
   // circleCount = 1;block
-  circleCount += 1;
+  const maxClicks = 3;
+  circleCount+=1;
   console.log(circleCount);
-
-  if (circleCount === 3) {
-    circle.style.width = "83em";
-    circle.style.height = "83em";
-    greetings.style.display = "block";
-    grayArea.style.display = "block";
-    start();
-  } else if (circleCount === 2) {
-    circle.style.width = "30em";
-    circle.style.height = "30em";
-  } else if (circleCount === 1) {
-    circle.style.width = "20em";
-    circle.style.height = "20em";
+  if (circleCount < 4) {
+    if (circleCount === 3) {
+      circle.style.width = "83em";
+      circle.style.height = "83em";
+      greetings.style.display = "block";
+      grayArea.style.display = "block";
+      start();
+    } else if (circleCount === 2) {
+      circle.style.width = "30em";
+      circle.style.height = "30em";
+    } else if (circleCount === 1) {
+      circle.style.width = "20em";
+      circle.style.height = "20em";
+    }
+  }else{
+    console.log('you reached the max circle clicks')
+    circleCount = 3;
   }
+  
 });
 
 function start() {
@@ -63,17 +68,29 @@ grayArea.addEventListener("click", function () {
   grayArea.style.alignItems = "center";
   grayArea.style.flexDirection = "column";
 });
-function validateInput() {
-  let nameInput = fullName.value;
 
+function validateInput() {
+  let nameInput = fullName.value.trim();
+  grayArea = document.getElementById("grayArea");
+  fullName = document.getElementById("FullName");
   if (nameInput === "Cholo") {
-    // alert(`greetings ${nameInput}`);
-    grayArea.style.background = "red";
-    grayArea.style.borderRadius = '0';
-    hideForm()
+    alert(`greetings ${nameInput}`);
+    grayArea.style.animation = "none";
+
+    setTimeout(() => {
+      grayArea.style.width = "100vw";
+      circleCount = 3;
+      grayArea.style.height = "200vh";
+      grayArea.style.borderRadius = '0';
+      grayArea.style.transition = "1s"
+      grayArea.style.rotate = '360deg'
+    }, 100);
+    circleCount = 3;
+
+    grayArea.style.background = "white";
+    grayArea.style.pointerEvents = 'none';
+    let buttonContainer = document.getElementById('buttonContainer')
+    buttonContainer.style.display = "none"
+
   }
-}
-function hideForm(){
-    fullName.style.display = 'none';
-    submit.style.display = 'none';
 }
