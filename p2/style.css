@@ -1,36 +1,126 @@
 body {
-    margin: 0;
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-.container{
-    background-color: white;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-#mabuhay{
-  color: black;
- 
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  overflow: hidden;
+  user-select: none;
 }
 
-.container img{
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.container {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#mabuhay {
+  color: black;
+  position: absolute;
+}
+
+#cube{
   width: 13vmin;
   position: absolute;
   top: 72vh;
-  
+  animation: dropBounce 1s ease-in-out forwards;
+  transition: 1s;
+  z-index: 99;
 }
 
+@keyframes dropBounce {
+  0% { top: -150px; }  /* Start above screen */
+  60% { top: 80vh; }   /* Drop down */
+  75% { top: 70vh; }   /* Small bounce up */
+  85% { top: 78vh; }   /* Small drop */
+  95% { top: 72vh; }   /* Tiny bounce */
+  100% { top: 75vh; }  /* Settle */
+}
+#hand2{
+  position: absolute;
+  rotate: 90deg;
+  width: 123vmin;
+  top: 4em;
+  left: -59em;
+  transition: 1s;
+  z-index: 99;
+}
+#cholodev{
+  position: absolute;
+  width: 49vmin;
+  opacity: 0;
 
+
+  /* position: absolute;
+  width: 13vmin;
+  opacity: 0;
+  left: 67px;
+  top: -7px; */
+}
+#projects{
+  margin: 20%;
+  position: absolute;
+  width: 10em;
+  height: 10em;
+  background: black;
+  border-radius: 100%;
+  opacity: 1;
+  transition: 0.5s;
+  left: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#profile{
+  margin: 20%;
+  position: absolute;
+  width: 10em;
+  height: 10em;
+  background: black;
+  border-radius: 100%;
+  opacity: 1;
+  transition: 0.5s; 
+  right: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#projects, #profile{
+  opacity: 0;
+  transition: 0.5s;
+}
+#glass{
+  background: rgba( 0, 0, 0, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 7.5px );
+-webkit-backdrop-filter: blur( 7.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+width: 10em;
+height: 10em;
+
+
+
+border-radius: 0;
+height: 108em;
+rotate: 146deg;
+position: absolute;
+z-index: 99;
+width: 20em;
+right: -48em; 
+/* to 114em */
+transition: 2s;
+}
