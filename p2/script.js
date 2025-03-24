@@ -8,6 +8,7 @@ let projects = document.getElementById("projects");
 let profile = document.getElementById("profile");
 let glass = document.getElementById("glass");
 let grabhand = document.getElementById('grabhand')
+let grabhand2 = document.getElementById('grabhand2')
 
 cube.addEventListener("mouseenter", function () {
   hand2.style.left = "-9em";
@@ -42,18 +43,40 @@ setTimeout(()=>{
   projects.style.left = "0";
   profile.style.right = "0";
   grabhand.style.left = '-8em';
+  grabhand2.style.right = '-8em';
   projects.style.opacity = '1'
+  profile.style.opacity = '1'
 },100)
   
   setTimeout(()=>{
-    grabhand.style.left = 'none';
+    // grabhand.style.display = 'none';
+    // grabhand.style.display = 'none';
   }, 200)
   grabhand.style.display = 'block';
+  grabhand2.style.display = 'block';
   setTimeout(()=>{
     grabhand.style.left = '-57em';
+    grabhand2.style.right = '-57em';
    
   }, 1000)
   setTimeout(()=>{
     grabhand.style.display = 'none';
+    grabhand2.style.display = 'none';
+  }, 2000)
+  setTimeout(()=>{
+    profile.style.animation = "profileround 5s infinite";
+    projects.style.animation = "projectsround 5s infinite";
+    profile.style.borderRadius = "15px";
+    projects.style.borderRadius = "15px";
+
   }, 2000)
 });
+
+profile.addEventListener('click', function (){
+  window.location.href = "https://github.com/chocoacocoa";
+})
+projects.addEventListener('click', function (){
+  window.location.href = "https://github.com/chocoacocoa";
+})
+
+
