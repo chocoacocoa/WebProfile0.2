@@ -76,7 +76,8 @@ body {
   border-radius: 100%;
   opacity: 1;
   transition: 0.5s;
-  left: 0;
+  /* left: 0; */
+  left: -50em;
   color: white;
   display: flex;
   justify-content: center;
@@ -92,7 +93,8 @@ body {
   border-radius: 100%;
   opacity: 1;
   transition: 0.5s; 
-  right: 0;
+  /* right: 0; */
+  right: -50em;
   color: white;
   display: flex;
   justify-content: center;
@@ -100,7 +102,8 @@ body {
 }
 #projects, #profile{
   opacity: 0;
-  transition: 0.5s;
+  width: 29vmin;
+  height: 29vmin;
 }
 #glass{
   background: rgba( 0, 0, 0, 0.25 );
@@ -123,4 +126,13 @@ width: 20em;
 right: -48em; 
 /* to 114em */
 transition: 2s;
+}
+#grabhand{
+  width: 127vmin;
+  position: absolute;
+  /* left: -8em; */
+  top: 0em;
+  left: -52em;
+  transition: 0.5s;
+  display: none;
 }
