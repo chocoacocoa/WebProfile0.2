@@ -215,3 +215,11 @@ transition: 2s;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
+#message{
+  position: absolute;
+  top: 0;
+  left: 9vh;
+  /* display: none; */
+  transition: 0.5s;
+  opacity: 0;
+}

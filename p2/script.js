@@ -7,8 +7,10 @@ let circle = document.getElementById("circle");
 let projects = document.getElementById("projects");
 let profile = document.getElementById("profile");
 let glass = document.getElementById("glass");
-let grabhand = document.getElementById('grabhand')
-let grabhand2 = document.getElementById('grabhand2')
+let grabhand = document.getElementById("grabhand");
+let grabhand2 = document.getElementById("grabhand2");
+let prj = document.getElementById('prj')
+let prf = document.getElementById('prf')
 
 cube.addEventListener("mouseenter", function () {
   hand2.style.left = "-9em";
@@ -39,44 +41,76 @@ cube.addEventListener("click", function () {
   //   if (glass.style.right === "65") {
   //     projects.style.opacity = "1";
   //   }
-setTimeout(()=>{
-  projects.style.left = "0";
-  profile.style.right = "0";
-  grabhand.style.left = '-8em';
-  grabhand2.style.right = '-8em';
-  projects.style.opacity = '1'
-  profile.style.opacity = '1'
-},100)
-  
-  setTimeout(()=>{
-    // grabhand.style.display = 'none';
-    // grabhand.style.display = 'none';
-  }, 200)
-  grabhand.style.display = 'block';
-  grabhand2.style.display = 'block';
-  setTimeout(()=>{
-    grabhand.style.left = '-57em';
-    grabhand2.style.right = '-57em';
-   
-  }, 1000)
-  setTimeout(()=>{
-    grabhand.style.display = 'none';
-    grabhand2.style.display = 'none';
-  }, 2000)
-  setTimeout(()=>{
-    profile.style.animation = "profileround 5s infinite";
-    projects.style.animation = "projectsround 5s infinite";
-    profile.style.borderRadius = "15px";
-    projects.style.borderRadius = "15px";
+  setTimeout(() => {
+    projects.style.left = "0";
+    profile.style.right = "0";
+    grabhand.style.left = "-8em";
+    grabhand2.style.right = "-8em";
+    projects.style.opacity = "1";
+    profile.style.opacity = "1";
+  }, 100);
 
-  }, 2000)
+  setTimeout(() => {
+
+  }, 200);
+  grabhand.style.display = "block";
+  grabhand2.style.display = "block";
+  setTimeout(() => {
+    grabhand.style.left = "-57em";
+    grabhand2.style.right = "-57em";
+  }, 1000);
+  setTimeout(() => {
+    grabhand.style.display = "none";
+    grabhand2.style.display = "none";
+  }, 2000);
+  setTimeout(() => {
+    profile.style.animation = "profileround 5s infinite both";
+    projects.style.animation = "projectsround 5s infinite both";
+
+  }, 1000);
 });
 
-profile.addEventListener('click', function (){
-  window.location.href = "https://github.com/chocoacocoa";
-})
-projects.addEventListener('click', function (){
-  window.location.href = "https://github.com/chocoacocoa";
-})
+anes(profile, projects, "20%", 'https://github.com/chocoacocoa');
+anes(projects, profile, "-20%", 'https://github.com/chocoacocoa?tab=repositories');
+function anes(a, b, c, d) {
+  a.addEventListener("click", function () {
+    a.style.animation = "none";
+    b.style.animation = "none";
+    setTimeout(() => {
+      a.style.width = "100vw";
+      a.style.height = "100vh";
+      a.style.borderRadius = "0";
+      a.style.transform = `translateX(${c})`;
+      prf.style.display = "none";
+      prj.style.display = "none";
+      a.style.cursor = 'unset'
+      b.style.cursor = 'unset'
+      message.style.display = 'none';
+    }, 200);
+    setTimeout(()=>{
+      a.style.backgroundColor = '#2B3137'
+      b.style.backgroundColor = '#2B3137'
+      window.location.href = `${d}`;
+    }, 500)
+  });
+}
 
+function hover(a, b){
+  let message = document.getElementById('message');
+  a.addEventListener('mouseenter', function (){
+    message.style.opacity = '1';
+  })
+  a.addEventListener('mouseout', function (){
+    message.style.opacity = '0';
+  })
+  b.addEventListener('mouseenter', function (){
+    message.style.opacity = '1';
+  })
+  b.addEventListener('mouseout', function (){
+    message.style.opacity = '0';
+  })
+
+}
+hover(profile, prf)
+hover(projects, prj)
 
