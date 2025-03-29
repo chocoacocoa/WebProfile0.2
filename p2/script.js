@@ -11,20 +11,27 @@ let grabhand = document.getElementById("grabhand");
 let grabhand2 = document.getElementById("grabhand2");
 let prj = document.getElementById('prj')
 let prf = document.getElementById('prf')
+let max = document.getElementById('max')
 
 cube.addEventListener("mouseenter", function () {
   hand2.style.left = "-9em";
+  max.style.opacity = '1';
+  mabuhay.style.opacity = '0'
 });
 cube.addEventListener("mouseout", function () {
   hand2.style.left = "-59em";
+  max.style.opacity = '0';
+  mabuhay.style.opacity = '1'
 });
 cube.addEventListener("click", function () {
-  mabuhay.style.opacity = "0";
+  setTimeout(()=>{
+    mabuhay.innerText = "";
+  },300)
   cholodev.style.opacity = "1";
+  cholodev.style.Zindex = '99'
   cube.style.opacity = "0";
   hand2.style.left = "19em";
-  //   projects.style.opacity = "1";
-  //   profile.style.opacity = "1";
+ 
   if (hand2.style.left === "19em") {
     cube.style.opacity = "0";
     setTimeout(() => {
@@ -34,13 +41,7 @@ cube.addEventListener("click", function () {
       hand2.style.display = "none";
     }, 3000);
   }
-  //ayaw gumana ng na sa below
-  //   if (glass.style.right === "10em") {
-  //     profile.style.opacity = "1";
-  //   }
-  //   if (glass.style.right === "65") {
-  //     projects.style.opacity = "1";
-  //   }
+  
   setTimeout(() => {
     projects.style.left = "0";
     profile.style.right = "0";
@@ -70,8 +71,8 @@ cube.addEventListener("click", function () {
   }, 1000);
 });
 
-anes(profile, projects, "20%", 'https://github.com/chocoacocoa');
-anes(projects, profile, "-20%", 'https://github.com/chocoacocoa?tab=repositories');
+anes(profile, projects, "20%", '/projects/index.html');
+anes(projects, profile, "-20%", '/projects/index.html');
 function anes(a, b, c, d) {
   a.addEventListener("click", function () {
     a.style.animation = "none";
@@ -90,8 +91,10 @@ function anes(a, b, c, d) {
     setTimeout(()=>{
       a.style.backgroundColor = '#2B3137'
       b.style.backgroundColor = '#2B3137'
-      window.location.href = `${d}`;
-    }, 500)
+      setTimeout(()=>{
+        window.location.href = `${d}`;
+      }, 1000);
+    }, 100);
   });
 }
 

@@ -67,6 +67,7 @@ grayArea.addEventListener("click", function () {
   grayArea.style.justifyContent = "center";
   grayArea.style.alignItems = "center";
   grayArea.style.flexDirection = "column";
+  grayArea.style.background = 'black';
 });
 
 function validateInput() {
@@ -84,6 +85,7 @@ function validateInput() {
       grayArea.style.borderRadius = '0';
       grayArea.style.transition = "1s"
       grayArea.style.rotate = '360deg'
+      grayArea.style.backgroundColor = "white";
       grayArea.addEventListener('transitionend', function (){
         window.location.href = "/p2/index.html"
       });

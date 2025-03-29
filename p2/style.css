@@ -223,3 +223,10 @@ transition: 2s;
   transition: 0.5s;
   opacity: 0;
 }
+#max{
+  opacity: 0;
+  
+}
+#max, #mabuhay{
+  transition: 0.2s;
+}

@@ -1,0 +1,50 @@
+body{
+    animation: animaIntra both 0.5s ease-in-out;
+    background-color: #2B3137;
+    overflow-x: hidden;
+}
+@keyframes animaIntra{
+from{
+    opacity: 0;
+}
+to{
+    opacity: 1;
+}
+}
+#container{
+    width: 100vw;
+    height: 100vh;
+}
+body{
+    margin:0;
+}
+#div1, #div2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+#CholoDev h1{
+    color: white;
+    text-align: center;
+}
+#div2{
+    animation: animaView both ease-in-out;
+    animation-timeline: view();
+
+    
+}
+/* @keyframes animaView{
+    50%{
+        opacity: 1;
+        transform: translateX(0vw);
+    }
+    0%{
+        opacity: 0;
+        transform: translateX(-50vw);
+    }
+} */
+
+
