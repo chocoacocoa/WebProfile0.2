@@ -1,3 +1,6 @@
+*{
+    color: white;
+}
 body{
     animation: animaIntra both 0.5s ease-in-out;
     background-color: #2B3137;
@@ -18,7 +21,7 @@ to{
 body{
     margin:0;
 }
-#div1, #div2{
+#div1, #div2, #div3{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,20 +34,90 @@ body{
     text-align: center;
 }
 #div2{
-    animation: animaView both ease-in-out;
+    animation: animaViewleftB both ease-in-out;
     animation-timeline: view();
-
-    
 }
-/* @keyframes animaView{
+#div2 h1{
+    animation: animaViewleft both ease-in-out;
+    animation-timeline: view();
+}
+#div2 img{
+    position: absolute;
+    width: 42vw;
+    left: 77vw;
+    animation: animaMun both ease-in-out;
+    animation-timeline: view();
+}
+@keyframes animaMun {
+    50%{
+        transform: translateX(0em);
+        opacity: 1;
+        animation: animaMunRotate 1.0s ease-in-out infinite;
+    }
+    0%{
+        transform: translateX(20em);
+        opacity: 0;
+    }
+}
+@keyframes animaMunRotate{
+    0%{
+        rotate: 0deg;
+    }
+    50%{
+        rotate: 360deg;
+    }
+    100%{
+        rotate: 0deg;
+    }
+}
+#div3{
+    animation: animaViewrightB both ease-in-out;
+    animation-timeline: view();
+}
+#div3 h1{
+    animation: animaViewright both ease-in-out;
+    animation-timeline: view();
+}
+
+
+/* KEYFRAMES */
+@keyframes animaViewright{
     50%{
         opacity: 1;
         transform: translateX(0vw);
+        
+    }
+    0%{
+        opacity: 0;
+        transform: translateX(50vw);
+       
+    }
+}
+@keyframes animaViewrightB{
+    50%{
+        background-color: black;
+    }
+    0%{
+       
+    }
+}
+@keyframes animaViewleft{
+    50%{
+        opacity: 1;
+        transform: translateX(0vw);
+        
     }
     0%{
         opacity: 0;
         transform: translateX(-50vw);
+       
     }
-} */
-
-
+}
+@keyframes animaViewleftB{
+    50%{
+        background-color: black;
+    }
+    0%{
+       
+    }
+}
