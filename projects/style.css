@@ -1,5 +1,6 @@
 *{
     color: white;
+    user-select: none;
 }
 body{
     animation: animaIntra both 0.5s ease-in-out;
@@ -136,28 +137,90 @@ h1{
     height: 100vh;
     width: 100vw;
 }
-/* DIV3 */
-#onrenderImg{
-    margin: 10em;
+
+
+
+
+
+
+
+
+
+/* DIV1 */
+#div1{
+    background: linear-gradient(black 50%, #2b3137);
 }
+/* DIV3 */
 @keyframes div3anima{
     0%{
-        opacity: 0;
+        width: 0%;
     }
-    50%{
-        opacity:1;
+    5% {
+        opacity: 0;
+        transform: translate(42em, 10em);
+        width: 10%;
+    }
+    50% {
+        opacity: 1;
+        transform: unset;
+        width: 90%;
+    }
+    100%{
+        opacity: 1;
+        transform: unset;
+        width: 90%;
     }
 }
 #onrenderImg{
     animation: div3anima both ease-in-out;
     animation-timeline: view();
-    width: 90%;
+    /* width: 90%; */
+    margin: 10em;
 }
-
-
-
-
-
+#div3 h1{
+    color: black;
+    font-size: 7vmin;
+}
+#BookSeekerDiv{
+    display: flex;
+        flex-direction: row;
+        width: 90%;
+        height: 100vmin;
+        justify-content: center;
+        align-items: center;
+        animation: bookseekertransition;
+        animation-timeline: view();
+}
+.imgs{
+ width: 80%;
+ height: 100%;
+ justify-content: center;
+ align-items: center;
+ display: flex;
+}
+.imgs img{
+    width: 0vmin;
+}
+@keyframes bookseekertransition{
+    0%{
+        width: 0%;
+    }
+    5% {
+        opacity: 0;
+        transform: translate(42em, 10em);
+        width: 10%;
+    }
+    50% {
+        opacity: 1;
+        transform: unset;
+        width: 90%;
+    }
+    100%{
+        opacity: 1;
+        transform: unset;
+        width: 90%;
+    }
+}
 @media only screen and (max-width: 600px) {
     #onrenderImg{
         width: 80%;
